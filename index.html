@@ -1,464 +1,622 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>Presentation Title - MidCamp 2015</title>
+	<title>I Wish I Knew This 3 Years Ago - MidCamp 2015</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+	<meta name="description"
+	      content="I wish I knew this 3 years ago: Introducing site builders to Entity Metadata Wrappers, EntityFieldQuery and more">
+	<meta name="author" content="Adam White">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/midcamp-color.css" id="theme">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/midcamp-color.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+<div class="reveal">
 
-            <div class="footer">
-                <div class="branding--logo">
-                    <span class="logo__image"><img src="lib/image/content/logo.png" alt="MidCamp 2015 logo" height="55px" /></span>
-                    <p class="logo__site-name">#MidCamp</p>
-                </div>
-                <div class="session--info">
-                    <p class="session__title">Presentation title <span class="seperator">&nbsp;/&nbsp;</span></p>
-                    <p class="session__presenter">Speaker Name</p>
-                </div>
-            </div>
+	<div class="footer">
+		<div class="branding--logo">
+			<span class="logo__image"><img src="lib/image/content/logo.png" alt="MidCamp 2015 logo"
+			                               height="55px"/></span>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-                <section>
-                    <h1>Talk Title</h1>
-                    <h3>https://2015.midcamp.org/node/2222</h3>
-                    <h3>MidCamp 2015</h3>
-                    <h3>#MidCamp</h3>
-                </section>
-
-                <section>
-                    <h1>Speaker Name</h1>
-                    <h3>@username</h3>
-                    <h3>Company Name</h3>
-                    <h3>http://example.com</h3>
-                </section>
-
-                <section>
-                    <p>Put your slides here. Use the example slides/sections for ideas.
-                    We recommend your last two slides are:
-                    a reminder of the sprint,
-                    and a slide for questions/feedback.</p>
-                </section>
-
-                <section>
-                    <h3>Sprint Sunday 09:00-17:00</h3>
-                    <h3>The Nerdery, 300 N Elizabeth St., Suite 500C</h3>
-                    <h3>http://2015.midcamp.org/schedule</h3>
-                    <h2>Learn through contribution</h2>
-                    <h3>Contributors of all skill sets and levels are welcome and encouraged.</h3>
-                    <p>#MidCamp</p>
-                </section>
-
-                <section>
-                    <h1>Feedback</h1>
-                    <h3>https://joind.in/talk/view/222222</h3>
-                    <h3>Speaker Name: @username</h3>
-                    <h3>#MidCamp</h3>
-                    <aside class="notes">
-                        <p>You need to go to
-                        https://joind.in/event/midcamp2015
-                        and add a "talk" for your session.
-                        Please use that link for your talk in the slide so people can give feedback.
-                        OR... cathy needs to import all the talks.
-                        And then you need to claim yours.</p>
-                    </aside>
-                </section>
-
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
-			</div>
-
+			<p class="logo__site-name">#MidCamp</p>
 		</div>
+		<div class="session--info">
+			<p class="session__title">I Wish I Knew This Three Years Ago<span class="seperator">&nbsp;/&nbsp;</span></p>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+			<p class="session__presenter">Adam White</p>
+		</div>
+	</div>
 
-		<script>
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+		<section>
+			<h1>I Wish I Knew This Three Years Ago
+			</h1>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+			<p>Introducing site builders to Entity Metadata Wrappers, EntityFieldQuery and more</p>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+			<p>https://2015.midcamp.org/node/66</p>
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+			<h3>MidCamp 2015</h3>
 
-		</script>
+			<h3>#MidCamp</h3>
+		</section>
 
-	</body>
+		<section>
+			<h1>Adam White</h1>
+
+			<h3>@adamwhite</h3>
+
+			<h3>Upper Rapids</h3>
+
+			<h3>http://www.upperrapids.ca</h3>
+		</section>
+
+		<section>
+			<h1>Hello from Niagara!</h1>
+
+			<p>We're Niagara, Canada's only dedicated Drupal development shop.</p>
+
+			<p>We're a small agency with a huge output, building sites without taking a breath since the last days of
+				Drupal 6.
+			</p>
+		</section>
+
+		<section>
+			<h1>Us & Drupal</h1>
+
+			<p>In 2010 I was left holding the keys to an in-house proprietary CMS I didn't have a hand in building.
+				Switching gears to Drupal allowed us to leverage a community of knowledge rather than just toil away on
+				our secure-because-its-obscure code.</p>
+
+			<p>We've build <b>lots</b> of sites on a <b>small town</b> budget.</p>
+		</section>
+
+		<section>
+			<h1>Hands Up</h1>
+
+			<p>When I started attending camps and cons my favourite part of any talk is the "hands up if you're a site
+				builder..." part.</p>
+
+			<p>Being stuck in the "all of the above" crowd, sad as we are, has some disadvantages.</p>
+		</section>
+
+		<section>
+			<h1>Nothing's stopping me so...</h1>
+
+			<p>Drupal, as a framework, can best be though of as a set of guidelines for being awesome. Unfortunately
+				there's plenty of room, with all of PHP at your fingertips, to be less so. For those of us in small
+				teams there's often nobody calling us out on writing completely bananas code.</p>
+
+		</section>
+
+		<section>
+			<h1>Case Study</h1>
+
+			<p><img src="images/learning_platform.jpg" style="max-width: 30%; float: left; margin-right: 1em;">
+
+				A few years back we helped a client rush out a prototype of a quiz-based e-learning app for professional
+				referees. The client originally built it as an iPad app but his market needed something on the web.</p>
+
+			<p>What we built worked great, but...</p>
+		</section>
+
+		<section>
+			<h1>Case Study</h1>
+
+			<p>Scores were saved directly to a MySQL database table using...
+
+			<p>
+			<pre><code>db_insert($table, array $options = array())</code></pre>
+			<p>While our individual questions were nodes, we retrieved our sets of questions using
+			</p>
+			<pre><code>views_get_view_result($name, $display_id = NULL)</code></pre>
+			<p>...which is sort of weird and had caching issues, but seemed logical given that in my site builder
+				mindset "views = lists of stuff"</p>
+		</section>
+
+		<section>
+			<h1>Building a Profile</h1>
+
+			<p>Every weird choice we made didn't seem to have any negative repercussion, so we made them.
+
+			</p>
+
+			<p>Years later though the client returned having white-labelled his product and sold a number of them
+				internationally. Suddenly we needed to take that old weird egg of a webapp and built it into a
+				maintainable multilingual product we could build from a template and maintain.
+			</p>
+
+		</section>
+
+		<section>
+			<h1>So let's do this right...</h1>
+
+
+		</section>
+
+		<section>
+			<h1>Re-building our quiz</h1>
+
+			<p>While the in-game UI of the quiz will still be done in JavaScript we want to overhaul the guts of this
+				system so that it's flexible, maintainable, and plays as nicely with Drupal's conventions as
+				possible.</p>
+
+			<p>The vision is to leverage the tools Drupal gives us to customize solutions per client. We don't just want
+				our kludgy custom code wrapped by Drupal.</p>
+
+		</section>
+
+		<section>
+			<small>Before we start...</small>
+			<h1>Everyone cool with Entities?</h1>
+
+		</section>
+
+		<section>
+			<h1>Querying Entities</h1>
+
+			<p>Drupal 7 introduced EntityFieldQuery, a PHP class used for quickly building queries of entities and
+				fields while abstracting any actual SQL.</p>
+
+			<p>We're going to use this in the function that generates our quiz questions instead of straight queries or Views.</p>
+		</section>
+
+		<section>
+			<h1>Why Avoid Views?</h1>
+
+			<ul>
+				<li>Interacting with Views programatically can be awkward</li>
+				<li>Increased readability of our code as no logic was hidden away in the view</li>
+				<li>It kept this core mechanic of our system out of the user space entirely</li>
+				<li>One less big module needed</li>
+				<li>We could handle our own caching</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>EntityFieldQuery</h2>
+<pre><code data-trim contenteditable>
+$query = new EntityFieldQuery();
+$query
+->entityCondition('entity_type', 'node')
+->entityCondition('bundle', 'true_false_question')
+->propertyCondition('status',1)
+->propertyOrderBy('created', 'DESC')
+->range(0,10);
+</code></pre>
+			<p>Notice the lack of semicolons between method calls. Each EFQ method returns the same object the method was called on, so we can chain calls.
+			</p>
+		</section>
+
+		<section>
+			<h1>Returns</h1>
+			<p>EntityFieldQuery returns the IDs of the found entities, keyed by entity type. </p>
+<pre><code>
+	['node']
+		[123]
+		[125]
+		[126]
+	['user']
+		[34]
+		[36]
+</code></pre>
+		</section>
+
+		<section >
+			<h2>entityCondition</h2>
+<pre><code data-trim contenteditable>
+$query = new EntityFieldQuery();
+$query
+->entityCondition('entity_type', 'node')
+->entityCondition('bundle', 'true_false_question')
+->propertyCondition('status',1)
+->propertyOrderBy('created', 'DESC')
+->range(0,10);
+</code></pre>
+			<p>The entityCondition method narrows down which type of entities you're querying, by both the type (nodes, users, taxonomy terms) and the bundle (content types for nodes). You can include more than one type of entity.
+			</p>
+		</section>
+
+		<section >
+			<h2>entityCondition</h2>
+<pre><code data-trim contenteditable>
+$query = new EntityFieldQuery();
+$query
+->entityCondition('entity_type', 'node')
+->entityCondition('bundle',
+	array('true_false_question','multiple_choice_question'),
+	'IN')
+->propertyCondition('status',1)
+->propertyOrderBy('created', 'DESC')
+->range(0,10);
+</code></pre>
+			<p>For multiple conditions an array is used as the second parameter and an operator is needed.
+		</section>
+
+		<section >
+			<h2>propertyCondition</h2>
+<pre><code data-trim contenteditable>
+$query = new EntityFieldQuery();
+$query
+->entityCondition('entity_type', 'node')
+->entityCondition('bundle', 'true_false_question')
+->propertyCondition('status',1)
+->propertyOrderBy('created', 'DESC')
+->range(0,10);
+</code></pre>
+			<p>Property conditions allow you to filter your results based on any column in the base table for the entity type. For nodes, this could be the published status, author, creation time, etc.
+		</section>
+
+		<section >
+			<h2>fieldCondition</h2>
+<pre><code data-trim contenteditable>
+$query = new EntityFieldQuery();
+$query
+->entityCondition('entity_type', 'node')
+->entityCondition('bundle', 'true_false_question')
+->propertyCondition('status',1)
+->propertyOrderBy('created', 'DESC')
+->fieldCondition('field_topic', 'tid', $topic)
+->fieldCondition
+->range(0,10);
+</code></pre>
+			<p>Fields can also be used to filter your results, the method takes the Field Name (or array), a column name, and value to test against at a minimum. Optionally you can include an operator, delta group or language group.
+		</section>
+
+		<section >
+			<h1>Don't Mix Conditions</h1>
+			<p>
+				One limitation of EFQ is that it's not possible to <b>query across</b> multiple entity types. So you can't in a single query find "published nodes that were authored by users who were created in the last hour."
+			</p>
+			<p>
+				...that would be querying both node->status and user->created. However you can extend the query using <code>hook_query_alter</code> or <code>hook_query_TAG_alter</code>.
+			</p>
+		</section>
+
+		<section >
+			<h2>hook_query_TAG_alter</h2>
+<pre><code data-trim contenteditable>
+$query = new EntityFieldQuery();
+$query
+->entityCondition('entity_type', 'node')
+->entityCondition('bundle', 'true_false_question')
+->propertyCondition('status',1)
+->fieldCondition
+->addTag('random');
+</code></pre>
+			<p>
+				The addTag method allows you to hook into the query object which results from the EntityFieldQuery.
+			</p>
+<pre><code data-trim contenteditable>
+function MYMODULE_query_random_alter($query) {
+	$query->orderRandom();
+}
+</code></pre>
+		</section>
+
+
+		<section >
+			<h2>hook_query_TAG_alter</h2>
+<pre><code data-trim contenteditable>
+$query = new EntityFieldQuery();
+$query
+->entityCondition('entity_type', 'node')
+->entityCondition('bundle', 'true_false_question')
+->propertyCondition('status',1)
+->fieldCondition
+->addTag('debug');
+</code></pre>
+			<p>
+				Tip: Use this for debugging too!
+			</p>
+<pre><code data-trim contenteditable>
+function MYMODULE_query_alter($query) {
+	if ($query->hasTag('rulesr_debug') && module_exists('devel')) {
+		dpq($query);
+	}
+}
+</code></pre>
+		</section>
+
+		<section>
+			<h1>Fixing our quiz</h1>
+
+			<p>With EntityFieldQuery we're now retrieving our quiz questions in far less bananas way.</p>
+			<p>What we want to do next is get away from storing our scores as straight data inserted into SQL. We want to make those into fielded Entities so we can leverage Drupal more.</p>
+		</section>
+
+
+		<section>
+			<h1>Next, we need a module</h1>
+
+			<p>Up until now we've been talking about stuff that's been part of the core entity API.</p>
+			<p>Entities were introduced late in the D7 development cycle, so it's an incomplete system. The Entity module fills out the gaps: CRUD, exportability, revisions, and...</p>
+		</section>
+
+		<section>
+			<h1>Entity Metadata Wrapper</h1>
+
+			<p>A wrapper class which makes dealing with entities and accessing property and field data much easier.</p>
+			<p>Your code, when using metadata wrappers, won't make your future self hate your current self. Let alone other people.</p>
+		</section>
+
+		<section>
+			<h1>Arrays!</h1>
+<pre><code data-trim contenteditable>
+$value = $node->field_maximum_points[LANGUAGE_NONE][0]['value'];
+</code></pre>
+
+			<p>This is scary but your code is full of them (well, mine was at least). Not only are you hard-coding the language into the field lookup, you're also going to start throwing PHP warnings when there's no data in that field.</p>
+			<p></p>
+		</section>
+
+		<section>
+			<h1>Entity Metadata Wrapper</h1>
+<pre><code data-trim contenteditable>
+$wrapper = entity_metadata_wrapper('node', $node);
+$value = $wrapper->field_maximum_points->value();
+</code></pre>
+
+			<p>This, on the other hand, is lovely. I don't need to know if that field exists, I'm also no longer hard-coding the language. I can even load this value with just the NID for $node instead of a fully populated object.</p>
+			<p></p>
+		</section>
+
+		<section>
+			<h1>Lazy Loading & Chaining</h1>
+			<p>Thing about having to do this...</p>
+<pre><code data-trim contenteditable>
+$node = node_load($nid);
+$author = user_load($node->uid);
+$email = $author->mail;
+</code></pre>
+
+			<p>Doing this the old way, I've had to load two entire entities from the database to get that email address. </p>
+		</section>
+
+		<section>
+			<h1>Lazy Loading & Chaining</h1>
+			<p>...but with an Entity Metadata Wrapper:</p>
+<pre><code data-trim contenteditable>
+$wrapper = entity_metadata_wrapper('node',$nid);
+$email = $wrapper->author->mail->value();
+</code></pre>
+			<p>With this method, the wrapper only needs to load as much as it needs to get to that email. This saves in both database overhead reads much cleaner.  </p>
+<pre><code data-trim contenteditable>
+$wrapper->author->mail = 'adam@upperrapids.ca';
+$wrapper->save();
+</code></pre>
+		</section>
+
+		<section>
+			<h1>Populating an entity</h1>
+<pre><code data-trim contenteditable>
+$entity = entity_create('attempt', array('type' => 'attempt'));
+
+$wrapper = entity_metadata_wrapper('attempt', $entity);
+
+$wrapper->field_course->set($nid);
+$wrapper->field_participant->set($user->uid);
+$wrapper->field_finished->set($finished);
+$wrapper->field_started->set($started);
+$wrapper->field_correct->set($correct);
+$wrapper->field_incorrect->set($incorrect);
+
+$wrapper->save();
+
+$createdId = $wrapper->getIdentifier();
+</code></pre>
+
+		</section>
+
+		<section>
+			<h1>Lists of items</h1>
+<pre><code data-trim contenteditable>
+foreach($wrapper->field_terms->getIterator() as $index => $term_wrapper) {
+	$termLabels[] = $term_wrapper->label->value();
+}
+
+// or ...
+foreach ($wrapper->field_terms->value() as $index => $term_wrapper) {
+	$termLabels[] = $term_wrapper->label->value();
+}
+</code></pre>
+			<p>You can set values in numerous ways:</p>
+<pre><code data-trim contenteditable>
+$tids = array(12,34,55);
+$wrapper->field_taxonomy_terms->set($tids);
+
+// or...
+$wrapper->field_taxonomy_terms[] = 77;
+</code></pre>
+		</section>
+
+		<section>
+			<h1>Exceptions</h1>
+			<p>Entity Metadata Wrapper throws an EntityMetadataWrapperException if you make it angry, so it's good practice to use try...catch blocks when using it:</p>
+<pre><code data-trim contenteditable>
+try {
+	$wrapper = entity_metadata_wrapper('node', $nid);
+	$courseCode = $wrapper->field_course->field_code->value();
+}
+catch (EntityMetadataWrapperException $exc) {
+	// panic and go hide in the woods
+}
+</code></pre>
+
+		</section>
+
+		<section>
+			<h1>Inspecting wrappers</h1>
+			<p>Entity Metadata Wrapper has a handy function called getPropertyInfo which will tell you which properties are available. </p>
+<pre><code data-trim contenteditable>
+$wrapper = enitity_metadata_wrapper('user',$uid);
+dpm($wrapper->getPropertyInfo());
+</code></pre>
+
+		</section>
+
+		<section>
+			<img src="images/getpropertyinfo.png" />
+		</section>
+
+		<section>
+			<h1>What about Drupal 8?</h1>
+			<p>While entities were introduced to D7 late in the development cycle, in D8 they're core to the system. Everything's been overhauled and extended, so the a Entity module will likely not be needed.</p>
+
+		</section>
+
+
+		<section>
+			<h1>Entities in D8</h1>
+			<p>Entities in D8 are now typed classes with methods, some are generic:</p>
+<pre><code data-trim contenteditable>
+$entity->id():
+</code></pre>
+			<p>Others are entity-type specific methods defined in the interfaces:</p>
+<pre><code data-trim contenteditable>
+$node->getTitle();
+</code></pre>
+
+		</section>
+
+
+
+		<section>
+			<h1>Handlers</h1>
+			<p>Entities in D8 are supported by handlers.</p>
+			<p>A storage handler supports loading, saving and deleting entities, as well as revisions, translations and configurable fields. </p>
+			<p>Separate handlers handle things like access control, viewing entities, listing, forms, etc. </p>
+
+		</section>
+
+
+		<section>
+			<h1>What you'd expect!</h1>
+			<p>The sensible way that you'd expect to access object oriented data is what we're shooting for in D8, and it should make custom code appear far less esoterically Drupally.</p>
+<pre><code data-trim contenteditable>
+$entity = entity_load('node', $nid)
+
+$entity->greatest_band_ever_field->value = "The Clash";
+$entity->save();
+</code></pre>
+		</section>
+
+
+		<section>
+			<h1>DrupalNorth</h1>
+
+			<h2>June 25-28. 2015 in Toronto, Ontario</h2>
+
+			<p>The first annual regional summit in the Ontario-Quebec corridor (2016 Montreal, 2017 Ottawa). Shooting for over 500 in attendance, think BadCAMP.  </p>
+
+			<p>#DrupalNorth</p>
+		</section>
+
+
+
+		<section>
+			<h3>Sprint Sunday 09:00-17:00</h3>
+
+			<h3>UIC Student Center East Tower, Room 605</h3>
+
+			<h3>http://2015.midcamp.org/schedule</h3>
+
+			<p>Learn through contribution</p>
+
+			<p>Contributors of all skill sets and levels are welcome and encouraged.</p>
+
+		</section>
+
+		<section>
+			<h1>Feedback</h1>
+
+			<h3>https://joind.in/13830</h3>
+
+			<h3>Speaker Name: @adamwhite</h3>
+
+			<h3>#MidCamp</h3>
+
+		</section>
+
+
+
+	</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+	// Full list of configuration options available at:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+
+		transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+		// Optional reveal.js plugins
+		dependencies: [
+			{
+				src: 'lib/js/classList.js', condition: function () {
+				return !document.body.classList;
+			}
+			},
+			{
+				src: 'plugin/markdown/marked.js', condition: function () {
+				return !!document.querySelector('[data-markdown]');
+			}
+			},
+			{
+				src: 'plugin/markdown/markdown.js', condition: function () {
+				return !!document.querySelector('[data-markdown]');
+			}
+			},
+			{
+				src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+				return !!document.querySelector('pre code');
+			}, callback: function () {
+				hljs.initHighlightingOnLoad();
+			}
+			},
+			{src: 'plugin/zoom-js/zoom.js', async: true},
+			{src: 'plugin/notes/notes.js', async: true}
+		]
+	});
+
+</script>
+
+</body>
 </html>
