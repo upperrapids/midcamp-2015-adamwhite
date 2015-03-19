@@ -145,10 +145,9 @@
 		</section>
 
 		<section>
-			<h1>Building a Profile</h1>
+			<h1>Prototype to Product</h1>
 
-			<p>Every weird choice we made didn't seem to have any negative repercussion, so we made them.
-
+			<p>Every weird choice we made didn't seem to have any negative repercussion... so we made them.
 			</p>
 
 			<p>Years later though the client returned having white-labelled his product and sold a number of them
@@ -195,11 +194,11 @@
 			<h1>Why Avoid Views?</h1>
 
 			<ul>
-				<li>Interacting with Views programatically can be awkward</li>
-				<li>Increased readability of our code as no logic was hidden away in the view</li>
-				<li>It kept this core mechanic of our system out of the user space entirely</li>
-				<li>One less big module needed</li>
-				<li>We could handle our own caching</li>
+				<li>Interacting with Views programatically can be <b>awkward</b></li>
+				<li>Increased <b>readability</b> of our code as no logic was hidden away in the view</li>
+				<li>It kept this core mechanic of our system <b>out of the user space</b> entirely</li>
+				<li>One <b>less</b> big module needed</li>
+				<li>We could handle our own <b>caching</b></li>
 			</ul>
 		</section>
 
@@ -392,6 +391,20 @@ $value = $wrapper->field_maximum_points->value();
 		</section>
 
 		<section>
+			<h1>EMW & Multi-Lingual</h1>
+<pre><code data-trim contenteditable>
+// whole wrapper
+$w = entity_metadata_wrapper('node', $node, array('langcode' => 'en'));
+
+// individual field
+$w->language('de')->body->summary->value();
+</code></pre>
+
+			<p>If you don't set it, the wrapper will use the <b>default</b> language, but you can set the language when you instantiate the class. Alternatively you can select language on a <b>per-field or per-property basis</b>.</p>
+			<p></p>
+		</section>
+
+		<section>
 			<h1>Lazy Loading & Chaining</h1>
 			<p>Think about having to do this...</p>
 <pre><code data-trim contenteditable>
@@ -400,7 +413,7 @@ $author = user_load($node->uid);
 $email = $author->mail;
 </code></pre>
 
-			<p>Doing this the old way, I've had to load two entire entities from the database to get that email address. </p>
+			<p>Doing this the old way, I've had to load <b>two entire entities</b> from the database to get to that email address. </p>
 		</section>
 
 		<section>
@@ -410,12 +423,13 @@ $email = $author->mail;
 $wrapper = entity_metadata_wrapper('node',$nid);
 $email = $wrapper->author->mail->value();
 </code></pre>
-			<p>With this method, the wrapper only needs to load as much as it needs to get to that email. This saves in both database overhead and reads much cleaner.  </p>
+			<p>With this method, the wrapper only needs to load as much as it needs to get to that email. This saves in <b>database overhead</b> and reads much <b>cleaner</b>.</p>
 <pre><code data-trim contenteditable>
 $wrapper->author->mail = 'adam@upperrapids.ca';
 $wrapper->save();
 </code></pre>
 		</section>
+
 
 		<section>
 			<h1>Populating an entity</h1>
@@ -450,7 +464,7 @@ foreach ($wrapper->field_terms->value() as $index => $term_wrapper) {
 	$termLabels[] = $term_wrapper->label->value();
 }
 </code></pre>
-			<p>You can set values in numerous ways:</p>
+			<p>You can <b>set</b> list values in numerous ways:</p>
 <pre><code data-trim contenteditable>
 $tids = array(12,34,55);
 $wrapper->field_taxonomy_terms->set($tids);
@@ -462,7 +476,7 @@ $wrapper->field_taxonomy_terms[] = 77;
 
 		<section>
 			<h1>Exceptions</h1>
-			<p>Entity Metadata Wrapper throws an EntityMetadataWrapperException if you make it angry, so it's good practice to use try...catch blocks when using it:</p>
+			<p>Entity Metadata Wrapper throws an <b>EntityMetadataWrapperException</b> if you make it angry, so it's good practice to use <code>try...catch</code> blocks when using it:</p>
 <pre><code data-trim contenteditable>
 try {
 	$wrapper = entity_metadata_wrapper('node', $nid);
@@ -477,7 +491,7 @@ catch (EntityMetadataWrapperException $exc) {
 
 		<section>
 			<h1>Inspecting wrappers</h1>
-			<p>Entity Metadata Wrapper has a handy function called getPropertyInfo which will tell you which properties are available. </p>
+			<p>Entity Metadata Wrapper has a handy function called <b>getPropertyInfo</b> which will tell you which properties are available from a wrapper. </p>
 <pre><code data-trim contenteditable>
 $wrapper = enitity_metadata_wrapper('user',$uid);
 dpm($wrapper->getPropertyInfo());
@@ -491,18 +505,18 @@ dpm($wrapper->getPropertyInfo());
 
 		<section>
 			<h1>What about Drupal 8?</h1>
-			<p>While entities were introduced to D7 late in the development cycle, in D8 they're core to the system. Everything's been overhauled and extended, so the a Entity module will likely not be needed.</p>
+			<p>While entities were introduced to D7 late in the development cycle, in D8 they're <b>core to the system</b>. Everything's been overhauled and extended, so the Entity module as it is today will likely <b>not be needed</b>.</p>
 
 		</section>
 
 
 		<section>
 			<h1>Entities in D8</h1>
-			<p>Entities in D8 are now typed classes with methods, some are generic:</p>
+			<p>Entities in D8 are now <b>typed classes</b> with methods, some are generic:</p>
 <pre><code data-trim contenteditable>
 $entity->id():
 </code></pre>
-			<p>Others are entity-type specific methods defined in the interfaces:</p>
+			<p>Others have entity-type specific methods defined in the <b>interfaces</b>:</p>
 <pre><code data-trim contenteditable>
 $node->getTitle();
 </code></pre>
@@ -512,14 +526,14 @@ $node->getTitle();
 		<section>
 			<h1>Handlers</h1>
 			<p>Entities in D8 are supported by handlers.</p>
-			<p>A storage handler supports loading, saving and deleting entities, as well as revisions, translations and configurable fields. </p>
+			<p>A <b>storage handler</b> supports loading, saving and deleting entities, as well as revisions, translations and configurable fields. </p>
 			<p>Separate handlers handle things like access control, viewing entities, listing, forms, etc. </p>
 
 		</section>
 
 		<section>
 			<h1>What you'd expect!</h1>
-			<p>The sensible way that you'd expect to access object oriented data is what we're shooting for in D8, and it should make custom code appear far less esoterically Drupally.</p>
+			<p>The sensible way that you'd expect to access information in an <b>object oriented</b> framework is what we're shooting for in D8, and it should make custom code appear far <b>less</b> esoterically Drupally.</p>
 <pre><code data-trim contenteditable>
 $entity = entity_load('node', $nid)
 
@@ -528,21 +542,35 @@ $entity->save();
 </code></pre>
 		</section>
 
+		<section>
+			<h1>No more EntityFieldQuery</h1>
+			<p>Replacing it is an <b>entity.query</b> service that will instantiate a query object for a given entity type.</p>
+<pre><code data-trim contenteditable>
+$entity_query_service = $container->get('entity.query');
+
+$query = $entity_query_service->get('node');
+->condition('status', 1)
+->condition('changed', REQUEST_TIME, '<')
+->condition('title', 'cat', 'CONTAINS')
+->condition('field_tags.entity.name', 'cats');
+
+$nids = $query->execute();
+</code></pre>
+
+		</section>
 
 		<section data-background="#ffffff">
 			<h1>Drupal North</h1>
 
 			<h2>June 25-28 2015 in Toronto</h2>
 
-			<p><img src="images/drupalnorth.png" style="max-width: 30%; float: left; margin-right: 1em;background: transparent;border: none;box-shadow: none;">The first annual regional summit in the Ontario-Quebec corridor (2016 Montreal, 2017 Ottawa). Shooting for over 500 in attendance. Think BadCAMP with moose.  </p>
+			<p><img src="images/drupalnorth.png" style="max-width: 30%; float: left; margin-right: 1em;background: transparent;border: none;box-shadow: none;">The first annual <b>regional summit</b> in the Ontario-Quebec corridor (2016 Montreal, 2017 Ottawa). Shooting for over 500 in attendance. Think BADCamp with maple syrup.</p>
 
 			<p>#DrupalNorth</p>
 		</section>
 
-
-
 		<section>
-			<h3>Sprint Sunday 09:00-17:00</h3>
+			<h1>Sprint Sunday</h1>
 
 			<h3>UIC Student Center East Tower, Room 605</h3>
 
