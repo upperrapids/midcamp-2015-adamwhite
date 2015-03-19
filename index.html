@@ -69,7 +69,9 @@
 			<h3>#MidCamp</h3>
 		</section>
 
-		<section>
+		<section data-background="#ffffff">
+			<img src="images/upper_rapids.png" style="float: left; background: transparent;border: none;box-shadow: none;margin: 0em;">
+
 			<h1>Adam White</h1>
 
 			<h3>@adamwhite</h3>
@@ -94,9 +96,9 @@
 
 			<p>In 2010 I was left holding the keys to an in-house proprietary CMS I didn't have a hand in building.
 				Switching gears to Drupal allowed us to leverage a community of knowledge rather than just toil away on
-				our secure-because-its-obscure code.</p>
+				our <b>hopefully</b>-secure-because-it's-obscure code.</p>
 
-			<p>We've build <b>lots</b> of sites on a <b>small town</b> budget.</p>
+			<p>We've built <b>lots</b> of sites in a <b>small town</b> market.</p>
 		</section>
 
 		<section>
@@ -391,7 +393,7 @@ $value = $wrapper->field_maximum_points->value();
 
 		<section>
 			<h1>Lazy Loading & Chaining</h1>
-			<p>Thing about having to do this...</p>
+			<p>Think about having to do this...</p>
 <pre><code data-trim contenteditable>
 $node = node_load($nid);
 $author = user_load($node->uid);
@@ -408,7 +410,7 @@ $email = $author->mail;
 $wrapper = entity_metadata_wrapper('node',$nid);
 $email = $wrapper->author->mail->value();
 </code></pre>
-			<p>With this method, the wrapper only needs to load as much as it needs to get to that email. This saves in both database overhead reads much cleaner.  </p>
+			<p>With this method, the wrapper only needs to load as much as it needs to get to that email. This saves in both database overhead and reads much cleaner.  </p>
 <pre><code data-trim contenteditable>
 $wrapper->author->mail = 'adam@upperrapids.ca';
 $wrapper->save();
@@ -507,8 +509,6 @@ $node->getTitle();
 
 		</section>
 
-
-
 		<section>
 			<h1>Handlers</h1>
 			<p>Entities in D8 are supported by handlers.</p>
@@ -516,7 +516,6 @@ $node->getTitle();
 			<p>Separate handlers handle things like access control, viewing entities, listing, forms, etc. </p>
 
 		</section>
-
 
 		<section>
 			<h1>What you'd expect!</h1>
@@ -530,12 +529,12 @@ $entity->save();
 		</section>
 
 
-		<section>
-			<h1>DrupalNorth</h1>
+		<section data-background="#ffffff">
+			<h1>Drupal North</h1>
 
-			<h2>June 25-28. 2015 in Toronto, Ontario</h2>
+			<h2>June 25-28 2015 in Toronto</h2>
 
-			<p>The first annual regional summit in the Ontario-Quebec corridor (2016 Montreal, 2017 Ottawa). Shooting for over 500 in attendance, think BadCAMP.  </p>
+			<p><img src="images/drupalnorth.png" style="max-width: 30%; float: left; margin-right: 1em;background: transparent;border: none;box-shadow: none;">The first annual regional summit in the Ontario-Quebec corridor (2016 Montreal, 2017 Ottawa). Shooting for over 500 in attendance. Think BadCAMP with moose.  </p>
 
 			<p>#DrupalNorth</p>
 		</section>
