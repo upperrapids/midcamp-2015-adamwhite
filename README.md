@@ -13,3 +13,4 @@ This talk was put together for [MidCamp](http://2015.midcamp.org) 2015 using the
 
 More information can be found on the [talk's page on midcamp.org] (http://2015.midcamp.org/session-proposal/i-wish-i-knew-3-years-ago-introducing-site-builders-entity-metadata-wrappers). Feedback from the talk is welcome at [joind.in](https://joind.in/13830
 ).
+
