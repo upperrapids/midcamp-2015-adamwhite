@@ -96,9 +96,9 @@
 
 			<p>In 2010 I was left holding the keys to an in-house proprietary CMS I didn't have a hand in building.
 				Switching gears to Drupal allowed us to leverage a community of knowledge rather than just toil away on
-				our <b>hopefully</b>-secure-because-it's-obscure code.</p>
+				our <b>hopefully</b>-secure-because-it's-obscure code. It also accelerated things.</p>
 
-			<p>We've built <b>lots</b> of sites in a <b>small town</b> market.</p>
+			<p>We've got to build <b>tons</b> of sites without a lot of time for introspection.</p>
 		</section>
 
 		<section>
@@ -113,9 +113,9 @@
 		<section>
 			<h1>Nothing's stopping me so...</h1>
 
-			<p>Drupal, as a framework, can best be though of as a set of guidelines for being awesome. Unfortunately
-				there's plenty of room, with all of PHP at your fingertips, to be less so. For those of us in small
-				teams there's often nobody calling us out on writing completely bananas code.</p>
+			<p>Drupal, as a framework, can best be though of as a set of <b>guidelines</b> for being awesome. Unfortunately
+				there's plenty of room, with <b>all of PHP</b> at your fingertips, to be less so. For those of us in small
+				teams there's often nobody calling us out on writing completely <b>bananas</b> code.</p>
 
 		</section>
 
@@ -124,8 +124,8 @@
 
 			<p><img src="images/learning_platform.jpg" style="max-width: 30%; float: left; margin-right: 1em;">
 
-				A few years back we helped a client rush out a prototype of a quiz-based e-learning app for professional
-				referees. The client originally built it as an iPad app but his market needed something on the web.</p>
+				A few years back we helped a client rush out a <b>prototype</b> of a quiz-based e-learning app for professional
+				referees. The client originally built it as an iPad app but his target audience wanted something on the web.</p>
 
 			<p>What we built worked great, but...</p>
 		</section>
@@ -152,7 +152,7 @@
 
 			<p>Years later though the client returned having white-labelled his product and sold a number of them
 				internationally. Suddenly we needed to take that old weird egg of a webapp and built it into a
-				maintainable multilingual product we could build from a template and maintain.
+				<b>maintainable multilingual product</b> we could build and maintain from an installation profile.
 			</p>
 
 		</section>
@@ -213,13 +213,13 @@ $query
 ->propertyOrderBy('created', 'DESC')
 ->range(0,10);
 </code></pre>
-			<p>Notice the lack of semicolons between method calls. Each EFQ method returns the same object the method was called on, so we can chain calls.
+			<p>Notice the lack of semicolons between method calls. Each EFQ method returns the same object the method was called on, so we can <b>chain calls</b>.
 			</p>
 		</section>
 
 		<section>
 			<h1>Returns</h1>
-			<p>EntityFieldQuery returns the IDs of the found entities, keyed by entity type. </p>
+			<p>EntityFieldQuery returns the IDs of the found entities, keyed by <b>entity type</b>. </p>
 <pre><code>
 	['node']
 		[123]
@@ -242,7 +242,7 @@ $query
 ->propertyOrderBy('created', 'DESC')
 ->range(0,10);
 </code></pre>
-			<p>The entityCondition method narrows down which type of entities you're querying, by both the type (nodes, users, taxonomy terms) and the bundle (content types for nodes). You can include more than one type of entity.
+			<p>The <b>entityCondition</b> method narrows down which type of entities you're querying, by both the type (nodes, users, taxonomy terms) and the bundle (<b>content types</b> for nodes). You can include more than one type of entity.
 			</p>
 		</section>
 
@@ -350,23 +350,23 @@ function MYMODULE_query_alter($query) {
 		<section>
 			<h1>Fixing our quiz</h1>
 
-			<p>With EntityFieldQuery we're now retrieving our quiz questions in far less bananas way.</p>
-			<p>What we want to do next is get away from storing our scores as straight data inserted into SQL. We want to make those into fielded Entities so we can leverage Drupal more.</p>
+			<p>With EntityFieldQuery we're now retrieving our quiz questions in far less esoteric way.</p>
+			<p>What we want to do next is get away from storing our scores as straight data inserted into SQL. We want to make those into <b>fielded Entities</b> so we can leverage Drupal more.</p>
 		</section>
 
 
 		<section>
 			<h1>Next, we need a module</h1>
 
-			<p>Up until now we've been talking about stuff that's been part of the core entity API.</p>
-			<p>Entities were introduced late in the D7 development cycle, so it's an incomplete system. The Entity module fills out the gaps: CRUD, exportability, revisions, and...</p>
+			<p>Up until now we've been talking about stuff that's been part of the <b>core entity API</b>.</p>
+			<p>Entities were introduced <b>late</b> in the D7 development cycle, so it's an incomplete system. The Entity module fills out the gaps: CRUD, exportability, revisions, and...</p>
 		</section>
 
 		<section>
 			<h1>Entity Metadata Wrapper</h1>
 
-			<p>A wrapper class which makes dealing with entities and accessing property and field data much easier.</p>
-			<p>Your code, when using metadata wrappers, won't make your future self hate your current self. Let alone other people.</p>
+			<p>A <b>wrapper class</b>b> which makes dealing with entities and accessing property and field data much easier.</p>
+			<p>Your code, when using Metadata Wrappers, won't make your future self hate your current self. Let alone other people.</p>
 		</section>
 
 		<section>
