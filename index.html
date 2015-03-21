@@ -206,7 +206,7 @@ $query
 ->propertyOrderBy('created', 'DESC')
 ->range(0,10);
 </code></pre>
-			<p>Notice the lack of semicolons between method calls. Each EFQ method returns the same object the method was called on, so we can <b>chain calls</b>.
+			<p>Notice the lack of semicolons between method calls. Each EntityFieldQuery (EFQ) method returns the same object the method was called on, so we can <b>chain calls</b>.
 			</p>
 		</section>
 
@@ -224,13 +224,15 @@ $query
 </code></pre>
 		</section>
 
-		<section >
+		<section>
 			<h2>entityCondition</h2>
 <pre><code data-trim contenteditable>
 $query = new EntityFieldQuery();
 $query
+
 ->entityCondition('entity_type', 'node')
 ->entityCondition('bundle', 'true_false_question')
+
 ->propertyCondition('status',1)
 ->propertyOrderBy('created', 'DESC')
 ->range(0,10);
@@ -245,9 +247,11 @@ $query
 $query = new EntityFieldQuery();
 $query
 ->entityCondition('entity_type', 'node')
+//
 ->entityCondition('bundle',
 	array('true_false_question','multiple_choice_question'),
 	'IN')
+//
 ->propertyCondition('status',1)
 ->propertyOrderBy('created', 'DESC')
 ->range(0,10);
@@ -262,7 +266,9 @@ $query = new EntityFieldQuery();
 $query
 ->entityCondition('entity_type', 'node')
 ->entityCondition('bundle', 'true_false_question')
+//
 ->propertyCondition('status',1)
+//
 ->propertyOrderBy('created', 'DESC')
 ->range(0,10);
 </code></pre>
@@ -278,7 +284,9 @@ $query
 ->entityCondition('bundle', 'true_false_question')
 ->propertyCondition('status',1)
 ->propertyOrderBy('created', 'DESC')
+//
 ->fieldCondition('field_topic', 'tid', $topic)
+//
 ->range(0,10);
 </code></pre>
 			<p>Fields can also be used to filter your results, the method takes the Field Name (or array), a column name, and value to test against at a minimum. Optionally you can include an operator, delta group or language group.
@@ -302,6 +310,7 @@ $query
 ->entityCondition('entity_type', 'node')
 ->entityCondition('bundle', 'true_false_question')
 ->propertyCondition('status',1)
+//
 ->addTag('random');
 </code></pre>
 			<p>
