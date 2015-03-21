@@ -94,27 +94,23 @@
 		<section>
 			<h1>Us & Drupal</h1>
 
-			<p>In 2010 I was left holding the keys to an in-house proprietary CMS I didn't have a hand in building.
+			<p>I was a Java developer left holding the keys to an in-house PHP-based CMS I didn't have a hand in building.
 				Switching gears to Drupal allowed us to leverage a community of knowledge rather than just toil away on
 				our <b>hopefully</b>-secure-because-it's-obscure code. It also accelerated things.</p>
 
-			<p>We've got to build <b>tons</b> of sites without a lot of time for introspection.</p>
+			<p>I've got to build <b>tons</b> of sites without a lot of time for introspection.</p>
 		</section>
 
 		<section>
 			<h1>Hands Up</h1>
 
-			<p>When I started attending camps and cons my favourite part of any talk is the "hands up if you're a site
-				builder..." part.</p>
-
-			<p>Being stuck in the "all of the above" crowd, sad as we are, has some disadvantages.</p>
 		</section>
 
 		<section>
 			<h1>Nothing's stopping me so...</h1>
 
 			<p>Drupal, as a framework, can best be though of as a set of <b>guidelines</b> for being awesome. Unfortunately
-				there's plenty of room, with <b>all of PHP</b> at your fingertips, to be less so. For those of us in small
+				there's plenty of room, with <b>all of PHP</b> at your fingertips, to be less so. For those of us in tiny
 				teams there's often nobody calling us out on writing completely <b>bananas</b> code.</p>
 
 		</section>
@@ -170,9 +166,6 @@
 				system so that it's flexible, maintainable, and plays as nicely with Drupal's conventions as
 				possible.</p>
 
-			<p>The vision is to leverage the tools Drupal gives us to customize solutions per client. We don't just want
-				our kludgy custom code wrapped by Drupal.</p>
-
 		</section>
 
 		<section>
@@ -184,10 +177,10 @@
 		<section>
 			<h1>Querying Entities</h1>
 
-			<p>Drupal 7 introduced EntityFieldQuery, a PHP class used for quickly building queries of entities and
+			<p>Drupal 7 introduced <b>EntityFieldQuery</b>, a PHP class used for quickly building queries of entities and
 				fields while abstracting any actual SQL.</p>
 
-			<p>We're going to use this in the function that generates our quiz questions instead of straight queries or Views.</p>
+			<p>We're going to use this in the function that generates our quiz questions <b>instead</b> of straight queries or Views.</p>
 		</section>
 
 		<section>
@@ -286,7 +279,6 @@ $query
 ->propertyCondition('status',1)
 ->propertyOrderBy('created', 'DESC')
 ->fieldCondition('field_topic', 'tid', $topic)
-->fieldCondition
 ->range(0,10);
 </code></pre>
 			<p>Fields can also be used to filter your results, the method takes the Field Name (or array), a column name, and value to test against at a minimum. Optionally you can include an operator, delta group or language group.
@@ -298,7 +290,7 @@ $query
 				One limitation of EFQ is that it's not possible to <b>query across</b> multiple entity types. So you can't in a single query find "published nodes that were authored by users who were created in the last hour."
 			</p>
 			<p>
-				...that would be querying both node->status and user->created. However you can extend the query using <code>hook_query_alter</code> or <code>hook_query_TAG_alter</code>.
+				...that would be querying both <b>node->status</b> and <b>user->created</b>. However you can extend the query using <code>hook_query_alter</code> or <code>hook_query_TAG_alter</code>.
 			</p>
 		</section>
 
@@ -310,7 +302,6 @@ $query
 ->entityCondition('entity_type', 'node')
 ->entityCondition('bundle', 'true_false_question')
 ->propertyCondition('status',1)
-->fieldCondition
 ->addTag('random');
 </code></pre>
 			<p>
@@ -332,7 +323,6 @@ $query
 ->entityCondition('entity_type', 'node')
 ->entityCondition('bundle', 'true_false_question')
 ->propertyCondition('status',1)
-->fieldCondition
 ->addTag('debug');
 </code></pre>
 			<p>
@@ -340,7 +330,7 @@ $query
 			</p>
 <pre><code data-trim contenteditable>
 function MYMODULE_query_alter($query) {
-	if ($query->hasTag('rulesr_debug') && module_exists('devel')) {
+	if ($query->hasTag('debug') && module_exists('devel')) {
 		dpq($query);
 	}
 }
