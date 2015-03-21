@@ -355,17 +355,17 @@ function MYMODULE_query_alter($query) {
 		<section>
 			<h1>Entity Metadata Wrapper</h1>
 
-			<p>A <b>wrapper class</b>b> which makes dealing with entities and accessing property and field data much easier.</p>
+			<p>A <b>wrapper class</b> which makes dealing with entities and accessing property and field data much easier.</p>
 			<p>Your code, when using Metadata Wrappers, won't make your future self hate your current self. Let alone other people.</p>
 		</section>
 
 		<section>
-			<h1>Arrays!</h1>
+			<h1>Arrays['Blegh']</h1>
 <pre><code data-trim contenteditable>
 $value = $node->field_maximum_points[LANGUAGE_NONE][0]['value'];
 </code></pre>
 
-			<p>This is scary but your code is full of them (well, mine was at least). Not only are you hard-coding the language into the field lookup, you're also going to start throwing PHP warnings when there's no data in that field.</p>
+			<p>This is scary but your code is full of them (well, mine was). Not only are you hard-coding the language into the field lookup, you're also going to throw warnings when there's no data in that field.</p>
 			<p></p>
 		</section>
 
@@ -381,7 +381,7 @@ $value = $wrapper->field_maximum_points->value();
 		</section>
 
 		<section>
-			<h1>EMW & Multi-Lingual</h1>
+			<h1>Multilingual</h1>
 <pre><code data-trim contenteditable>
 // whole wrapper
 $w = entity_metadata_wrapper('node', $node, array('langcode' => 'en'));
@@ -506,7 +506,7 @@ dpm($wrapper->getPropertyInfo());
 <pre><code data-trim contenteditable>
 $entity->id():
 </code></pre>
-			<p>Others have entity-type specific methods defined in the <b>interfaces</b>:</p>
+			<p>Others have entity-type specific methods defined in their <b>interfaces</b>:</p>
 <pre><code data-trim contenteditable>
 $node->getTitle();
 </code></pre>
@@ -538,7 +538,7 @@ $entity->save();
 <pre><code data-trim contenteditable>
 $entity_query_service = $container->get('entity.query');
 
-$query = $entity_query_service->get('node');
+$query = $entity_query_service->get('node')
 ->condition('status', 1)
 ->condition('changed', REQUEST_TIME, '<')
 ->condition('title', 'cat', 'CONTAINS')
